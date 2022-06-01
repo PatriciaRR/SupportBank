@@ -12,5 +12,10 @@ namespace SupportBank
             OutGoingPayment = outGoingPayment;
             InComingPayment = inComingPayment;
         }
+
+        public decimal GetBalance()
+        {
+            return 0.0M;
+        }
     }
 }
