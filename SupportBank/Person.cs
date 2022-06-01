@@ -2,7 +2,15 @@ namespace SupportBank
 {
     public class Person
     {
-        string Name { get; }
+        public string Name { get; }
+        public List<Transaction> OutGoingPayment { get; }
+        public List<Transaction> InComingPayment { get; }
 
+        public Person(string name, List<Transaction> outGoingPayment, List<Transaction> inComingPayment)
+        {
+            Name = name;
+            OutGoingPayment = outGoingPayment;
+            InComingPayment = inComingPayment;
+        }
     }
 }
