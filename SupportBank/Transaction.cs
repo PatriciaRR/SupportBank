@@ -19,11 +19,10 @@ namespace SupportBank
 
         public void LogOutTransaction()
         {
-            Console.WriteLine($"On {Date.ToShortDateString()}, {From}. lent {To}. £{Amount} for {Narrative}.");
-            // Console.WriteLine($"From: {From}");
-            // Console.WriteLine($"To: {To}");
-            // Console.WriteLine($"Narrative: {Narrative}");
-            // Console.WriteLine($"Amount: {Amount}");
+            Console.WriteLine($"On {Date.ToShortDateString()}, {From}. lent {To} £{Amount} for {Narrative}.");
+            
         }
+
+        
     }
 }
