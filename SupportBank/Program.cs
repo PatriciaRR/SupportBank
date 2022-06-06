@@ -25,12 +25,10 @@ namespace SupportBank
                 transaction.LogOutTransaction();
             }
 
-
             PersonalAccount personalAccount = new PersonalAccount();
             personalAccount.CreateAccountFromTransactions(transactions, args[1]);
-
             Console.WriteLine($"{args[1]}, £{personalAccount.CalculateTotalBalance()}");
-            //dotnet run list "individual name"
+            // //dotnet run list "individual name"
 
         }
     }

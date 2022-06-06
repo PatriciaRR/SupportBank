@@ -20,9 +20,7 @@ namespace SupportBank
         public void LogOutTransaction()
         {
             Console.WriteLine($"On {Date.ToShortDateString()}, {From}. lent {To} £{Amount} for {Narrative}.");
-            
         }
 
-        
     }
 }

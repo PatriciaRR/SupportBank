@@ -2,6 +2,7 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 
+
 namespace SupportBank
 {
     class DataFormatter
@@ -9,13 +10,24 @@ namespace SupportBank
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         public List<Transaction> TransactionReader()
         {
+            // Console.WriteLine("Select transactions to process - 2014 or 2015:");
+            // string input = Console.ReadLine();
+
+            // string path;
+            // if (input == "2014")
+            //     path = @".\Transactions2014.csv";
+
+            // else
+            //     path = @".\Transactions2015.csv";
+
+
             string path = @".\Transactions2014.csv";
             string path2015 = @".\Transactions2015.csv";
             string[] lines = System.IO.File.ReadAllLines(path);
             string[] lines2015 = System.IO.File.ReadAllLines(path2015);
             List<Transaction> transactions = new List<Transaction> { };
 
-            foreach (string line in lines2015)
+            foreach (string line in lines2015) //lines2015 to run 2015 data
             {
                 string[] words = line.Split(',');
                 if (words[0] == "Date")
@@ -24,12 +36,10 @@ namespace SupportBank
                 }
 
                 DateTime date = default;
-
                 try
                 {
                     date = DateTime.Parse(words[0]);
                 }
-
                 catch (FormatException exception)
                 {
                     Console.WriteLine($"Unable to process supplied data. Invalid DATE provided: {line} ");
@@ -42,12 +52,10 @@ namespace SupportBank
                 string to = words[2];
                 string narrative = words[3];
                 decimal amount = 0;
-
                 try
                 {
                     amount = Decimal.Parse(words[4]);
                 }
-
                 catch (FormatException exception)
                 {
                     Console.WriteLine($"Unable to process supplied data. Invalid AMOUNT provided: {line}");
@@ -65,8 +73,5 @@ namespace SupportBank
         }
 
     }
-
-
-
 
 }
