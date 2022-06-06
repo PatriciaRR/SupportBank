@@ -6,8 +6,6 @@ namespace SupportBank
         public List<Transaction> OutGoingPayment { get; set; }
         public List<Transaction> InComingPayment { get; set; }
 
-
-
         public void CreateAccountFromTransactions(List<Transaction> transactions, string name)
         {
             OutGoingPayment = new List<Transaction>();
@@ -49,11 +47,6 @@ namespace SupportBank
 
     }
 }
-
-//single out data in transactions according to name
-//filter 'from' and 'to' data
-//Sum of outgoing - 
-//Sum of incoming
 
 
 
